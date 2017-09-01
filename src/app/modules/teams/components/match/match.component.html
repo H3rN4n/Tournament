@@ -1,0 +1,54 @@
+<section class="">
+
+  <md-card *ngFor="let team of (teams$ | async).list" [routerLink]="['/team/' + team.$key]">
+    <md-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <md-card-title>{{team.name}}</md-card-title>
+      <md-card-subtitle>{{team.league}}</md-card-subtitle>
+    </md-card-header>
+    <img [src]="team.imageUrl" [alt]="team.name">
+  </md-card>
+
+  <!-- <button md-raised-button (click)="createUser()">Create User</button>
+  <button md-raised-button (click)="deleteAll()">Delete All</button> -->
+  <!-- <ul>
+    <li class="text" *ngFor="let item of articles | async">
+      {{item | json}}
+    </li>
+  </ul> -->
+  <!-- <md-select placeholder="Max players per team:" (change)="changeMaxTeamSize($event)" [(ngModel)]="teamsData.teamPlayerLimit"
+    name="teamPlayerLimit">
+    <md-option *ngFor="let size of posibleTeamSize" [value]="size">
+      {{size}}
+    </md-option>
+  </md-select> -->
+  <!-- <div *ngFor="let team of teams; let $i = index">
+      <md-card class="example-card">
+          <md-card-header>
+            <div md-card-avatar class="example-header-image"></div>
+            <md-card-title>{{teams[$i].name}} ({{totalPerTeam[$i]}})</md-card-title>
+          </md-card-header>
+          <md-card-content>
+              <app-list (deletePlayer)="removePlayer($event)" [teamNumber]="$i + 1" [players]="teamsData.players"></app-list>
+              <app-add-item [teamNumber]='$i + 1' (addPlayer)="addPlayer($event)" *ngIf="totalTeam1 < teamsData.teamPlayerLimit"></app-add-item>
+            </md-card-content>
+          <md-card-actions>
+            
+          </md-card-actions>
+        </md-card>
+      <br><br>
+  </div> -->
+
+  
+  <div class="match-header">
+    <div class="team-container">Team Img</div>
+    <div class="vs-container">VS</div>
+    <div class="team-container">Team Img</div>
+    <div class="detail-container">Date: / Result:</div>
+  </div>
+  <div class="errors-container" *ngIf="id === 'new' && errors.length">
+    <p class="error" *ngFor="let message of errors">{{message}}</p>
+  </div>
+  <button md-raised-button disabled *ngIf="id === 'new' && errors.length > 0">Save</button>
+  <button md-raised-button (click)="save()" *ngIf="id === 'new' && errors.length === 0">Save</button>
+</section>

@@ -1,0 +1,218 @@
+[
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/13.png",
+    "name": "Premier League",
+    "from": "England"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/53.png",
+    "name": "LaLiga Santander",
+    "from": "Spain"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/31.png",
+    "name": "Calcio A",
+    "from": "Italy"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/19.png",
+    "name": "Bundesliga",
+    "from": "Germany"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/16.png",
+    "name": "Ligue 1",
+    "from": "France"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/68.png",
+    "name": "Süper Lig",
+    "from": "Turkey"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/308.png",
+    "name": "Liga NOS",
+    "from": "Portugal"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/67.png",
+    "name": "Sogaz Russian Footbal...",
+    "from": "Russia"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/14.png",
+    "name": "EFL Championship",
+    "from": "England"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/39.png",
+    "name": "Major League Soccer",
+    "from": "United States"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/341.png",
+    "name": "LIGA Bancomer MX",
+    "from": "Mexico"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/10.png",
+    "name": "Eredivisie",
+    "from": "Netherlands"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/353.png",
+    "name": "Primera División",
+    "from": "Argentina"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/2118.png",
+    "name": "Legends",
+    "from": ""
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/4.png",
+    "name": "Belgium Pro League",
+    "from": "Belgium"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/63.png",
+    "name": "Hellas Liga",
+    "from": "Greece"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/54.png",
+    "name": "LaLiga 1 I 2 I 3",
+    "from": "Spain"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/189.png",
+    "name": "Raiffeisen Super League",
+    "from": "Switzerland"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/332.png",
+    "name": "Ukrayina Liha",
+    "from": "Ukraine"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/20.png",
+    "name": "Bundesliga 2",
+    "from": "Germany"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/336.png",
+    "name": "Liga Dimayor",
+    "from": "Colombia"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/335.png",
+    "name": "Campeonato Scotiabank",
+    "from": "Chile"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/350.png",
+    "name": "Abdul Latif Jameel Le...",
+    "from": "Saudi Arabia"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/32.png",
+    "name": "Calcio B",
+    "from": "Italy"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/50.png",
+    "name": "Scottish Premiership",
+    "from": "Scotland"
+  }
+,
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/83.png",
+    "name": "K LEAGUE Classic",
+    "from": "Korea Republic"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/349.png",
+    "name": "Meiji Yasuda J1 League",
+    "from": "Japan"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/351.png",
+    "name": "Hyundai A-League",
+    "from": "Australia"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/66.png",
+    "name": "T-Mobile Ekstraklasa",
+    "from": "Poland"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/1.png",
+    "name": "Alka Superliga",
+    "from": "Denmark"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/56.png",
+    "name": "Allsvenskan",
+    "from": "Sweden"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/17.png",
+    "name": "Domino’s Ligue 2",
+    "from": "France"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/347.png",
+    "name": "South African FL",
+    "from": "South Africa"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/80.png",
+    "name": "Österreichische Fußba...",
+    "from": "Austria"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/60.png",
+    "name": "EFL League One",
+    "from": "England"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/41.png",
+    "name": "Tippeligaen",
+    "from": "Norway"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/61.png",
+    "name": "EFL League Two",
+    "from": "England"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/999900.png",
+    "name": "Veikkausliiga",
+    "from": ""
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/7.png",
+    "name": "Campeonato Brasileiro",
+    "from": "Brazil"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/65.png",
+    "name": "SSE Airtricity League",
+    "from": "Republic of Ireland"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/322.png",
+    "name": "Finnliiga",
+    "from": "Finland"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/2025.png",
+    "name": "Liga do Brasil B",
+    "from": "Brazil"
+  },
+  {
+    "imageUrl": "http://futhead.cursecdn.com/static/img/17/leagues/2150.png",
+    "name": "REWARDS",
+    "from": ""
+  }
+]

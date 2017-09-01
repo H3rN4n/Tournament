@@ -1,0 +1,5 @@
+<section class="team-list">
+  <md-list>
+    <app-list-item (deleteItem)="delete($event)" *ngFor="let player of players" [player]="player" [teamNumber]="teamNumber"></app-list-item>
+  </md-list>
+</section>

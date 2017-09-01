@@ -1,0 +1,17 @@
+md-list-item:hover md-icon.person{
+    display: none;
+}
+
+md-list-item md-icon.close{
+    display: none;
+}
+
+md-list-item:hover md-icon.close{
+    display: block;
+}
+
+md-icon.close:hover {
+    color: red;
+    cursor: pointer;
+}
+

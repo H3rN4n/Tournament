@@ -1,0 +1,6 @@
+<md-list-item *ngIf="player.team == teamNumber">
+    <md-icon md-list-icon class="person">person</md-icon>
+    <h4 md-line>{{player.name}}</h4>
+    <!-- <p md-line> description </p> -->
+    <md-icon md-list-icon class="close" (click)="delete('1')">close</md-icon>
+  </md-list-item>

@@ -1,0 +1,13 @@
+
+<md-input-container class="example-full-width">
+  <input mdInput placeholder="Nombre" [(ngModel)]="name">
+  <!-- <md-error *ngIf="emailFormControl.hasError('pattern')">
+    Please enter a valid email address
+  </md-error>
+  <md-error *ngIf="emailFormControl.hasError('required')">
+    Email is <strong>required</strong>
+  </md-error> -->
+  
+</md-input-container>
+<!-- <button md-raised-button disabled *ngIf="errors.length > 0">Add</button> -->
+<button md-raised-button (click)="add()">Add</button>

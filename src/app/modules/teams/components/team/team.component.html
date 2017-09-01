@@ -1,0 +1,33 @@
+<section>
+  <h4>Find a Team
+    <md-icon md-list-icon>search</md-icon>
+  </h4> <button md-raised-button>Create a Team</button>
+  <md-list *ngIf="id !== 'new'">
+    <md-list-item routerLink="/team/1">Team 1</md-list-item>
+    <md-list-item routerLink="/team/2">Team 2</md-list-item>
+    <md-list-item routerLink="/team/3">Team 3</md-list-item>
+  </md-list>
+</section>
+<hr>
+<section>
+  Team Img
+  <h3>Team Name</h3>
+  <h5>Won:</h5>
+  <h5>Lose:</h5>
+
+  <h4>Players</h4>
+  <md-list>
+    <md-list-item routerLink="/player/1">Player 1</md-list-item>
+    <md-list-item routerLink="/player/2">Player 2</md-list-item>
+    <md-list-item routerLink="/player/3">Player 3</md-list-item>
+  </md-list>
+
+  <h4>Last Results</h4>
+  <md-list>
+    <md-list-item routerLink="/match/1">Team 1(1) vs Team 2(2)</md-list-item>
+    <md-list-item routerLink="/match/2">Team 2(1) vs Team 3(2)</md-list-item>
+    <md-list-item routerLink="/match/3">Team 3(1) vs Team 1(2)</md-list-item>
+    <md-list-item (click)="getMoreMatches()">See More</md-list-item>
+  </md-list>
+
+</section>

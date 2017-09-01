@@ -1,0 +1,192 @@
+<section>
+  <h3 *ngIf="id === 'new'" contenteditable="">Tournament Name</h3>
+  <h3 *ngIf="id !== 'new'">Tournament Name</h3>
+
+  <h4 *ngIf="id !== 'new'" >Leader Board</h4>
+  <md-list *ngIf="id !== 'new'">
+    <md-list-item routerLink="/team/1">Team 1</md-list-item>
+    <md-list-item routerLink="/team/2">Team 2</md-list-item>
+    <md-list-item routerLink="/team/3">Team 3</md-list-item>
+  </md-list>
+
+  <h4 *ngIf="id !== 'new'">Last Results</h4>
+  <md-list *ngIf="id !== 'new'">
+    <md-list-item routerLink="/match/1">Team 1(1) vs Team 2(2)</md-list-item>
+    <md-list-item routerLink="/match/2">Team 2(1) vs Team 3(2)</md-list-item>
+    <md-list-item routerLink="/match/3">Team 3(1) vs Team 1(2)</md-list-item>
+    <md-list-item (click)="getMoreMatches()">See More</md-list-item>
+  </md-list>
+
+  <h4>Team List</h4>
+  <main id="tournament">
+    <ul class="round round-1">
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+        <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+      </li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom ">
+          <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+      </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <<li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-2">
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-3">
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+  
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-4">
+      <li class="spacer">&nbsp;</li>
+      
+      <li class="game game-top winner">
+          <img src="/assets/flags/blank.gif" class="flag flag-ar" alt="" />  <span>Argentina</span>
+        </li>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom ">
+            <img src="/assets/flags/blank.gif" class="flag flag-uy" alt="" />  <span>Uruguay</span>
+        </li>
+      
+      <li class="spacer">&nbsp;</li>
+    </ul>		
+  </main>
+  <h6 *ngIf="id === 'new'">add team</h6>
+
+  <div *ngIf="id === 'new' && errors.length" class="errors-container">
+    <p class="error" *ngFor="let message of errors">{{message}}</p>
+  </div>
+  <button *ngIf="id === 'new' && errors.length > 0" md-raised-button disabled>Save</button>
+  <button *ngIf="id === 'new' && errors.length === 0" md-raised-button (click)="save()">Save</button>
+</section>
