@@ -71,7 +71,7 @@ export class TeamsService extends RootService {
     protected af: AngularFireModule,
     protected db: AngularFireDatabase,
   ) {
-    super('/teams', af, db);
+    super('/teams/list', af, db);
   }
 }
 
@@ -85,7 +85,7 @@ export class PlayersService extends RootService {
     protected af: AngularFireModule,
     protected db: AngularFireDatabase,
   ) {
-    super('/players', af, db);
+    super('/players/list', af, db);
   }
 }
 

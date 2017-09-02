@@ -1,6 +1,7 @@
 // // teams.reducer.ts
 import { StoreModule, ActionReducerMap } from '@ngrx/store';
-import { TeamsActionTypes } from './actions';
+import { TeamsActionTypes } from './actions/teams.actions';
+import { PlayersActionTypes } from './actions/players.actions';
 import {
     teamsState,
     teamState,
@@ -26,9 +27,9 @@ export function teamsReducer(state: any = playersState, action: any): any {
 }
 export function teamReducer(state: any = teamsState, action: any): any {
     switch (action.type) {
-        case TeamsActionTypes.CHANGE_MAXPLAYER_PER_TEAM: {
-            return { ...state, teamPlayerLimit: action.payload };
-        }
+        // case TeamsActionTypes.CHANGE_MAXPLAYER_PER_TEAM: {
+        //     return { ...state, teamPlayerLimit: action.payload };
+        // }
 
         default: {
             return state;
@@ -40,6 +41,9 @@ export const PlayersReducers: ActionReducerMap<any> = playersReducer;
 export const PlayerReducers: ActionReducerMap<any> = playerReducer;
 export function playersReducer(state: any = playersState, action: any): any {
     switch (action.type) {
+        case PlayersActionTypes.LOAD_SUCCESS: {
+            return { ...state, list: action.payload, subscribed: true };
+        }
         default: {
             return state;
         }

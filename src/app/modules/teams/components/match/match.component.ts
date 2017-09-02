@@ -13,7 +13,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs';
 import { _Player, _Team, _Match, _Teams, _Players } from './../../models';
-import { TeamsActions } from './../../actions'
+import { TeamsActions } from './../../actions/teams.actions'
 
 @Component({
   selector: 'app-match',
@@ -42,7 +42,7 @@ export class MatchComponent implements OnInit {
 
   ) {
     this.teams$ = store.select('Teams');
-    this.players$ = store.select('Players');
+    //this.players$ = store.select('Players');
   }
 
   ngOnInit() {
@@ -69,11 +69,11 @@ export class MatchComponent implements OnInit {
   }
 
   createUser(){
-    this.store.dispatch(new TeamsActions.CreateTeam())
+    //this.store.dispatch(new TeamsActions.CreateTeam())
   }
 
   deleteAll(){
-    this.store.dispatch(new TeamsActions.DeleteAll())
+    // this.store.dispatch(new TeamsActions.DeleteAll())
   }
 
   // changeMaxTeamSize($event) {

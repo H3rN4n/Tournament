@@ -43,7 +43,7 @@ import { PlayersComponent } from './components/players/players.component';
 import { PlayerComponent } from './components/player/player.component';
 
 import { EffectsModule } from '@ngrx/effects';
-import { TeamsEffects } from './effects';
+import { TeamsEffects, PlayersEffects } from './effects';
 
 @NgModule({
   imports: [
@@ -65,7 +65,8 @@ import { TeamsEffects } from './effects';
     StoreModule.forFeature('Tournament', TournamentReducers),
     StoreModule.forFeature('Matches', MatchesReducers),
     StoreModule.forFeature('Match', MatchReducers),
-    EffectsModule.forFeature([TeamsEffects])
+    EffectsModule.forFeature([TeamsEffects]),
+    EffectsModule.forFeature([PlayersEffects])
   ],
   exports: [ListComponent, ListItemComponent],
   providers: [
