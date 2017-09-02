@@ -11,10 +11,16 @@
 <hr> -->
 <md-progress-bar *ngIf="!teamData.name" color="accent" mode="indeterminate"></md-progress-bar>
 <section class="panel" *ngIf="teamData.name">
-  <img [src]="teamData.imageUrl" alt="">
-  <h3>{{teamData.name}}</h3>
-  <h5>Won:</h5>
-  <h5>Lose:</h5>
+  <div class="row">
+    <div class="col-xs">
+      <img [src]="teamData.imageUrl" alt="">
+    </div>
+    <div class="col-xs">
+      <h3>{{teamData.name}}</h3>
+      <h5>Won:</h5>
+      <h5>Lose:</h5>
+    </div>
+  </div>
 </section>
 <section class="panel" *ngIf="teamData.name">
   <h4>Players</h4>

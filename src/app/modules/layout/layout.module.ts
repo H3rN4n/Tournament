@@ -9,6 +9,8 @@ import { RoutingModule } from './../routing/routing.module';
 import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthModule } from './../../modules/auth/auth.module';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -23,6 +25,6 @@ import { AuthModule } from './../../modules/auth/auth.module';
     AuthModule,
   ],
   exports: [BaseLayoutComponent],
-  declarations: [HeaderComponent, BaseLayoutComponent]
+  declarations: [HeaderComponent, BaseLayoutComponent, FooterComponent, SidebarComponent]
 })
 export class LayoutModule { }

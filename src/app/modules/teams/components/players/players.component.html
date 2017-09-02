@@ -1,9 +1,13 @@
 <md-progress-bar *ngIf="!(players$ | async).list.length" color="accent" mode="indeterminate"></md-progress-bar>
-<md-card *ngFor="let player of (players$ | async).list" [routerLink]="['/player/' + player.$key]">
-  <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>{{player.name}}</md-card-title>
-    <md-card-subtitle>{{player.from}}</md-card-subtitle>
-  </md-card-header>
-  <img [src]="player.imageUrl" [alt]="player.name">
-</md-card>
+<div class="row">
+  <div class="col-xs" *ngFor="let player of (players$ | async).list" [routerLink]="['/player/' + player.$key]">
+    <md-card>
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>{{player.name}}</md-card-title>
+        <md-card-subtitle>{{player.from}}</md-card-subtitle>
+      </md-card-header>
+      <img [src]="player.imageUrl" [alt]="player.name">
+    </md-card>
+  </div>
+</div>
