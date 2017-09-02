@@ -14,6 +14,9 @@ export const TeamsActionTypes = {
     LOAD: type('[Teams] Load'),
     LOAD_SUCCESS: type('[Teams] Load Success'),
     LOAD_FAIL: type('[Teams] Load Fail'),
+    LOAD_SINGLE: type('[Teams] Load Single'),
+    LOAD_SINGLE_SUCCESS: type('[Teams] Load Single Success'),
+    LOAD_SINGLE_FAIL: type('[Teams] Load Single Fail'),
     // CHANGE_MAXPLAYER_PER_TEAM: type('[Teams] Change Max player per team'),
     // CREATE_TEAM: type('[Teams] Create Team'),
     // CREATE_TEAM_SUCCESS: type('[Teams] Create Team Success'),
@@ -71,7 +74,7 @@ export const TeamsActionTypes = {
 export class Load implements Action {
     type = TeamsActionTypes.LOAD;
 
-    constructor() { }
+    constructor(public payload: any) { }
 }
 
 export class LoadSuccess implements Action {
@@ -81,7 +84,27 @@ export class LoadSuccess implements Action {
 }
 
 export class LoadFail implements Action {
-    type = TeamsActionTypes.LOAD_FAIL;
+    type = TeamsActionTypes.LOAD_SINGLE_FAIL;
+
+    constructor(public payload: any) { }
+}
+
+
+export class LoadSingle implements Action {
+    type = TeamsActionTypes.LOAD_SINGLE;
+
+    constructor(public payload: _Team) { }
+}
+
+
+export class LoadSingleSuccess implements Action {
+    type = TeamsActionTypes.LOAD_SINGLE_SUCCESS;
+
+    constructor(public payload: _Team) { }
+}
+
+export class LoadSingleFail implements Action {
+    type = TeamsActionTypes.LOAD_SINGLE_FAIL;
 
     constructor(public payload: any) { }
 }
@@ -137,6 +160,9 @@ export const TeamsActions = {
     Load,
     LoadSuccess,
     LoadFail,
+    LoadSingle,
+    LoadSingleSuccess,
+    LoadSingleFail
     // ChangeMaxPlayerPerTeam,
     // CreateTeam,
     // CreateTeamSuccess,
@@ -156,6 +182,9 @@ interface Actions {
     Load: typeof Load;
     LoadSuccess: typeof LoadSuccess;
     LoadFail: typeof LoadFail;
+    LoadSingle: typeof LoadSingle;
+    LoadSingleSuccess: typeof LoadSingleSuccess;
+    LoadSingleFail: typeof LoadSingleFail;
     // ChangeMaxPlayerPerTeam: typeof ChangeMaxPlayerPerTeam;
     // CreateTeam: typeof CreateTeam;
     // CreateTeamFail: typeof CreateTeamFail;

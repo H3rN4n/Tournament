@@ -27,7 +27,7 @@ import {
 export class TeamsEffects {
 
   openSnackBar(message) {
-    this.snackBar.open(message, '',{
+    this.snackBar.open(message, '', {
       duration: 1500,
     });
   }
@@ -35,8 +35,8 @@ export class TeamsEffects {
   // Listen for the 'LOGIN' action
   @Effect() getTeamList$: Observable<Action> = this.actions$
     .ofType(TeamsActionTypes.LOAD)
-    .mergeMap(action =>
-      this.teamSrv.list({
+    .mergeMap((action: any) => {
+      return this.teamSrv.list({
         limitToFirst: 10,
         limitToLast: 50
       })
@@ -44,14 +44,30 @@ export class TeamsEffects {
           this.openSnackBar("Teams Loaded");
           return new TeamsActions.LoadSuccess(res);
         })
+    }
+
     );
 
-    // @Effect() deleteAllTeam$: Observable<Action> = this.actions$
-    // .ofType(TeamsActionTypes.DELETE_ALL_TEAMS)
-    // .switchMap((action) => {
-    //   this.teamSrv.deleteAll();
-    //   return Observable.of(new TeamsActions.DeleteAllSuccess());
-    // });
+  @Effect() getTeam$: Observable<Action> = this.actions$
+    .ofType(TeamsActionTypes.LOAD_SINGLE)
+    .mergeMap((action: any) => {
+      return this.teamSrv.getItem(action.payload)
+        .map(res => {
+          this.openSnackBar("Team Loaded");
+          console.log('Team Loaded', res)
+          return new TeamsActions.LoadSingleSuccess(res);
+        })
+
+    }
+
+    );
+
+  // @Effect() deleteAllTeam$: Observable<Action> = this.actions$
+  // .ofType(TeamsActionTypes.DELETE_ALL_TEAMS)
+  // .switchMap((action) => {
+  //   this.teamSrv.deleteAll();
+  //   return Observable.of(new TeamsActions.DeleteAllSuccess());
+  // });
 
   // getItemsList
   // getItem
@@ -82,23 +98,31 @@ export class TeamsEffects {
 export class PlayersEffects {
 
   openSnackBar(message) {
-    this.snackBar.open(message, '',{
+    this.snackBar.open(message, '', {
       duration: 1500,
     });
   }
 
   // Listen for the 'LOGIN' action
-  @Effect() getTeamList$: Observable<Action> = this.actions$
+  @Effect() getPlayersList$: Observable<Action> = this.actions$
     .ofType(PlayersActionTypes.LOAD)
-    .mergeMap(action =>
-      this.playerSrv.list({
-        limitToFirst: 10,
-        limitToLast: 50
-      })
-        .map(res => {
-          this.openSnackBar("Players Loaded");
-          return new PlayersActions.LoadSuccess(res)
+    .mergeMap((action: any) => {
+      console.log(action);
+      var query = action.payload.equalTo;
+      if (action.payload.equalTo > 0) {
+        return this.playerSrv.list({
+          limitToFirst: 0,
+          limitToLast: 50,
+          orderByChild: 'teamId',
+          equalTo: parseInt(action.payload.equalTo)
         })
+          .map(res => {
+            this.openSnackBar("Players Loaded");
+            console.log(res, "Players Loaded")
+            return new PlayersActions.LoadSuccess(res)
+          })
+      }
+    }
     );
 
   constructor(

@@ -9,15 +9,17 @@
   </md-list>
 </section>
 <hr> -->
-<section class="panel">
-  Team Img
-  <h3>Team Name</h3>
+<section class="panel" *ngIf="teamData.name">
+  <img [src]="teamData.imageUrl" alt="">
+  <h3>{{teamData.name}}</h3>
   <h5>Won:</h5>
   <h5>Lose:</h5>
-
+</section>
+<section class="panel" *ngIf="teamData.name">
   <h4>Players</h4>
-  <app-players></app-players>
-
+  <app-players [fromTeam]="id"></app-players>
+</section>
+<section class="panel" *ngIf="teamData.name">
   <h4>Last Results</h4>
   <md-list>
     <md-list-item routerLink="/match/1">Team 1(1) vs Team 2(2)</md-list-item>
@@ -25,5 +27,4 @@
     <md-list-item routerLink="/match/3">Team 3(1) vs Team 1(2)</md-list-item>
     <md-list-item (click)="getMoreMatches()">See More</md-list-item>
   </md-list>
-
 </section>

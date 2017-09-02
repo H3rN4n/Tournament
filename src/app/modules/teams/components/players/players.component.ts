@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, Input } from '@angular/core';
 
 import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
 
@@ -21,6 +21,10 @@ import { PlayersActions } from './../../actions/players.actions'
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
+
+  @Input()
+  fromTeam: number;
+
   id: any;
   players$: Observable<_Players>;
   playersData: any[] = [];
@@ -54,7 +58,7 @@ export class PlayersComponent implements OnInit {
     this.subscriptions.push(playersSubcription);
 
     if(!this.playersData.length){
-      this.store.dispatch(new PlayersActions.Load());
+      this.store.dispatch(new PlayersActions.Load({equalTo: this.fromTeam}));
     }
     
   }

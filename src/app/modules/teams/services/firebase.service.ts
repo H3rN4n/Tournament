@@ -29,6 +29,7 @@ export abstract class RootService {
   getItem(key: string): FirebaseObjectObservable<any> {
     const itemPath = `${this.basePath}/${key}`;
     this.item = this.db.object(itemPath);
+    console.log(this.item, "ITEM")
     return this.item;
   }
 
@@ -78,8 +79,8 @@ export class TeamsService extends RootService {
 @Injectable()
 export class PlayersService extends RootService {
 
-  players: FirebaseListObservable<Models._Player[]> = null; //  list of objects
-  player: FirebaseObjectObservable<Models._Player> = null; //   single object
+  collection: FirebaseListObservable<Models._Player[]> = null; //  list of objects
+  item: FirebaseObjectObservable<Models._Player> = null; //   single object
 
   constructor(
     protected af: AngularFireModule,

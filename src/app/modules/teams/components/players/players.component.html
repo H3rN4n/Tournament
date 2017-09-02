@@ -1,10 +1,8 @@
-<div class="panel">
-  <md-card *ngFor="let player of (players$ | async).list" [routerLink]="['/player/' + player.$key]">
-    <md-card-header>
-      <div md-card-avatar class="example-header-image"></div>
-      <md-card-title>{{player.name}}</md-card-title>
-      <md-card-subtitle>{{player.from}}</md-card-subtitle>
-    </md-card-header>
-    <img [src]="player.imageUrl" [alt]="player.name">
-  </md-card>
-</div>
+<md-card *ngFor="let player of (players$ | async).list" [routerLink]="['/player/' + player.$key]">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>{{player.name}}</md-card-title>
+    <md-card-subtitle>{{player.from}}</md-card-subtitle>
+  </md-card-header>
+  <img [src]="player.imageUrl" [alt]="player.name">
+</md-card>

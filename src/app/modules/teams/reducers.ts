@@ -18,6 +18,7 @@ export const TeamReducer: ActionReducerMap<any> = teamReducer;
 export function teamsReducer(state: any = playersState, action: any): any {
     switch (action.type) {
         case TeamsActionTypes.LOAD_SUCCESS: {
+            console.log('LOAD_SUCCESS')
             return { ...state, list: action.payload, subscribed: true };
         }
         default: {
@@ -25,11 +26,13 @@ export function teamsReducer(state: any = playersState, action: any): any {
         }
     }
 }
-export function teamReducer(state: any = teamsState, action: any): any {
+export function teamReducer(state: any = teamState, action: any): any {
     switch (action.type) {
-        // case TeamsActionTypes.CHANGE_MAXPLAYER_PER_TEAM: {
-        //     return { ...state, teamPlayerLimit: action.payload };
-        // }
+        case TeamsActionTypes.LOAD_SINGLE_SUCCESS: {
+            console.log('LOAD_SINGLE_SUCCESS')
+            return Object.assign({}, state, action.payload, { subscribed: true })
+            //return { ...state, single: action.payload, subscribed: true };
+        }
 
         default: {
             return state;

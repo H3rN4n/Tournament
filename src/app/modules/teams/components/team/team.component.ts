@@ -22,8 +22,8 @@ import { TeamsActions } from './../../actions/teams.actions';
 })
 export class TeamComponent implements OnInit {
   id: any;
-  players$: Observable<_Players>;
-  playersData: any[] = [];
+  team$: Observable<_Team>;
+  teamData: any;
   subscriptions: Subscription[] = [];
   errors = [];
 
@@ -37,23 +37,23 @@ export class TeamComponent implements OnInit {
     private matchSrv: MatchesService
 
   ) {
-    this.players$ = store.select('Team');
+    this.team$ = store.select('Team');
     //this.players$ = store.select('Players');
   }
 
   ngOnInit() {
-    const PlayerListSubcription: Subscription = this.players$.subscribe(data => {
-      this.playersData = data.list;
+    const TeamSubcription: Subscription = this.team$.subscribe(data => {
+      this.teamData = data;
     })
 
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
     });
 
-    this.subscriptions.push(PlayerListSubcription);
+    this.subscriptions.push(TeamSubcription);
 
-    if(!this.playersData.length){
-      //this.store.dispatch(new PlayersActions.Load());
+    if(!this.teamData.name){
+      this.store.dispatch(new TeamsActions.LoadSingle(this.id));
     }
     
   }

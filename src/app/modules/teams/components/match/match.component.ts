@@ -57,7 +57,7 @@ export class MatchComponent implements OnInit {
     this.subscriptions.push(teamsSubcription);
 
     if(!this.matchData.list.length){
-      this.store.dispatch(new TeamsActions.Load());
+      //this.store.dispatch(new TeamsActions.Load());
     }
     
   }

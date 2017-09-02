@@ -71,7 +71,7 @@ export const PlayersActionTypes = {
 export class Load implements Action {
     type = PlayersActionTypes.LOAD;
 
-    constructor() { }
+    constructor(public payload: any = null) { }
 }
 
 export class LoadSuccess implements Action {
