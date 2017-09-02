@@ -48,6 +48,7 @@ export class TeamComponent implements OnInit {
 
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
+      this.store.dispatch(new TeamsActions.LoadSingle(this.id));
     });
 
     this.subscriptions.push(TeamSubcription);

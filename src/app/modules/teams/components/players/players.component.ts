@@ -22,8 +22,14 @@ import { PlayersActions } from './../../actions/players.actions'
 })
 export class PlayersComponent implements OnInit {
 
+  _fromTeam: number;
   @Input()
-  fromTeam: number;
+  set fromTeam(fromTeam: number) {
+    this._fromTeam = fromTeam;
+    this.store.dispatch(new PlayersActions.Load({equalTo: fromTeam}));
+  }
+  get fromTeam() { return this._fromTeam; }
+
 
   id: any;
   players$: Observable<_Players>;
@@ -68,6 +74,7 @@ export class PlayersComponent implements OnInit {
       subscription.unsubscribe();
     })
   }
+
 
   createUser(){
     //this.store.dispatch(new TeamsActions.CreateTeam())

@@ -7,7 +7,8 @@ import {
   MdSelectModule,
   MdButtonModule,
   MdInputModule,
-  MdSnackBarModule
+  MdSnackBarModule,
+  MdProgressBarModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -55,6 +56,7 @@ import { TeamsEffects, PlayersEffects } from './effects';
     MdInputModule,
     MdSnackBarModule,
     MdCardModule,
+    MdProgressBarModule,
     FormsModule,
     RouterModule,
     StoreModule.forFeature('Teams', TeamsReducers),

@@ -9,6 +9,7 @@
   </md-list>
 </section>
 <hr> -->
+<md-progress-bar *ngIf="!teamData.name" color="accent" mode="indeterminate"></md-progress-bar>
 <section class="panel" *ngIf="teamData.name">
   <img [src]="teamData.imageUrl" alt="">
   <h3>{{teamData.name}}</h3>
