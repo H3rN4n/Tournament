@@ -1,29 +1,58 @@
 <md-progress-bar *ngIf="!(players$ | async).list.length" color="accent" mode="indeterminate"></md-progress-bar>
 <div class="panel" *ngIf="(players$ | async).list.length">
   <h3>Players</h3>
-  <div class="row" @fadeInAnimation>
+
+  <div class="row end-xs">
+    <div class="col-xs-12 fadeIn" *ngFor="let player of (players$ | async).list">
+      <div class="row player">
+        <div class="col col-xs-1 player-image-container">
+          <img [src]="player.imageUrl" [alt]="player.name">
+        </div>
+        <div class="col col-xs-1">
+          {{player.name}}
+        </div>
+        <div class="col col-xs-10">
+          <div class="row end-xs">
+            <div class="col">Def: {{player.stats.def}}</div>
+            <div class="col">Dri: {{player.stats.dri}}</div>
+            <div class="col">Pac: {{player.stats.pac}}</div>
+            <div class="col">Pas: {{player.stats.pas}}</div>
+            <div class="col">Phy: {{player.stats.phy}}</div>
+            <div class="col">Sho: {{player.stats.sho}}</div>
+            <div class="col">
+              <button md-raised-button>Buy $0.99</button>
+              <button md-raised-button>+ Wish List</button>
+              <button md-raised-button [routerLink]="['/player/' + player.$key]">See Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="row" @fadeInAnimation>
     <div class="col-xs fadeIn" *ngFor="let player of (players$ | async).list">
       <md-card class="">
         <md-card-content @slideInAnimation>
           <p class="playercard-name slideIn">{{player.name}}</p>
           <div class="player-image-container">
-            <img class="slideIn" [src]="player.imageUrl" [alt]="player.name">
+            <img [src]="player.imageUrl" [alt]="player.name">
           </div>
           <md-list *ngIf="player.stats">
-            <md-list-item class="slideIn">Def: {{player.stats.def}}</md-list-item>
-            <md-list-item class="slideIn">Dri: {{player.stats.dri}}</md-list-item>
-            <md-list-item class="slideIn">Pac: {{player.stats.pac}}</md-list-item>
-            <md-list-item class="slideIn">Pas: {{player.stats.pas}}</md-list-item>
-            <md-list-item class="slideIn">Phy: {{player.stats.phy}}</md-list-item>
-            <md-list-item class="slideIn">Sho: {{player.stats.sho}}</md-list-item>
+            <div class="col">Def: {{player.stats.def}}</div>
+            <div class="col">Dri: {{player.stats.dri}}</div>
+            <div class="col">Pac: {{player.stats.pac}}</div>
+            <div class="col">Pas: {{player.stats.pas}}</div>
+            <div class="col">Phy: {{player.stats.phy}}</div>
+            <div class="col">Sho: {{player.stats.sho}}</div>
           </md-list>
         </md-card-content>
+        <md-card-actions>
+          
+        </md-card-actions>
       </md-card>
-      <md-card-actions>
-        <button md-raised-button>Buy $0.99</button>
-        <button md-raised-button>+ Wish List</button>
-        <button md-raised-button [routerLink]="['/player/' + player.$key]" >See Detail</button>
-      </md-card-actions>
     </div>
-  </div>
+  </div> -->
+
 </div>

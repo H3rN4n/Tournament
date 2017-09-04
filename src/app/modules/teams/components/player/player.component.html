@@ -1,18 +1,32 @@
-<section @fadeInAnimation class="panel" *ngIf="playerData.name">
-  <img class="fadeIn" [src]="playerData.imageUrl" alt="">
-  <h3 class="fadeIn">{{playerData.name}}</h3>
-  <h5 class="fadeIn">Rating: {{playerData.rating}}</h5>
-  <h5 class="fadeIn">Nation: <img [src]="playerData.nationImageUrl" alt=""></h5>
-</section>
+<md-progress-bar *ngIf="!playerData.name" color="accent" mode="indeterminate"></md-progress-bar>
+<div class="panel" *ngIf="playerData.name">
+  <div class="row end" @fadeInAnimation>
+    <div class="col-xs-6 fadeIn">
+      <md-card class="">
+        <md-card-content @slideInAnimation>
+          <p class="playercard-name slideIn">{{playerData.name}}</p>
+          <div class="playercard-image-container">
+            <img class="slideIn" [src]="playerData.imageUrl" [alt]="playerData.name">
+          </div>
+          <div class="attr attr-1 slideIn">Def: {{playerData.stats.def}}</div>
+          <div class="attr attr-2 slideIn">Dri: {{playerData.stats.dri}}</div>
+          <div class="attr attr-3 slideIn">Pac: {{playerData.stats.pac}}</div>
+          <div class="attr attr-4 slideIn">Pas: {{playerData.stats.pas}}</div>
+          <div class="attr attr-5 slideIn">Phy: {{playerData.stats.phy}}</div>
+          <div class="attr attr-6 slideIn">Sho: {{playerData.stats.sho}}</div>
+        </md-card-content>
+      </md-card>
 
-<section class="panel" *ngIf="playerData.name">
-  <h3>Stats</h3>
-  <md-list @fadeInAnimation>
-    <md-list-item class="fadeIn">Def: {{playerData.stats.def}}</md-list-item>
-    <md-list-item class="fadeIn">Dri: {{playerData.stats.dri}}</md-list-item>
-    <md-list-item class="fadeIn">Pac: {{playerData.stats.pac}}</md-list-item>
-    <md-list-item class="fadeIn">Pas: {{playerData.stats.pas}}</md-list-item>
-    <md-list-item class="fadeIn">Phy: {{playerData.stats.phy}}</md-list-item>
-    <md-list-item class="fadeIn">Sho: {{playerData.stats.sho}}</md-list-item>
-  </md-list>
-</section>
+    </div>
+    <div class="col-xs-6">
+      <md-list>
+        <md-list-item>
+          <button md-raised-button>Buy (300 coins)</button>
+        </md-list-item>
+        <md-list-item>
+          <button md-raised-button>+ Wish List</button>
+        </md-list-item>
+      </md-list>
+    </div>
+  </div>
+</div>

@@ -5,10 +5,10 @@
 
 * {
     font-family: 'Roboto', sans-serif;
-    color: white;
 }
 
 body {
+    margin: 0;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f4c6b+0,3f4c6b+100;Blue+Grey+Flat */
     background: #3f4c6b; /* Old browsers */
     background: -moz-linear-gradient(top, #3f4c6b 0%, #3f4c6b 100%); /* FF3.6-15 */
@@ -27,10 +27,15 @@ img {
 
 .panel {
   padding: 10px;
-  background: rgba(255,255,225,0.3);
+  background: rgba(255,255,225,0.7);
   margin-top: 20px;
   box-shadow: rgba(255,255,225,0.3) 2px 3px;
   border-radius: 2px;
+  color: #333 !important;
+}
+
+button{
+  color: white !important;
 }
 
 .error {

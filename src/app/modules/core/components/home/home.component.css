@@ -1,7 +1,12 @@
 md-list-item {
   display: block;
+  font-size: 24px;
+  text-decoration: underline;
+  line-height: 28px;
+  cursor: pointer;
 }
 
-/* .panel {
-  opacity: 0;
-} */
+.panel h3{
+  margin-top: 0px;
+  font-size: 32px;
+}
