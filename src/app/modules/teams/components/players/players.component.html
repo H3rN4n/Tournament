@@ -1,8 +1,8 @@
 <md-progress-bar *ngIf="!(players$ | async).list.length" color="accent" mode="indeterminate"></md-progress-bar>
-<div class="row">
-  <div class="col-xs list-item" @fadeInAnimation *ngFor="let player of (players$ | async).list" [routerLink]="['/player/' + player.$key]">
-    <md-card class="list-item">
-      <md-card-header >
+<div class="row" @fadeInAnimation *ngIf="(players$ | async).list.length">
+  <div class="col-xs fadeIn" *ngFor="let player of (players$ | async).list" [routerLink]="['/player/' + player.$key]">
+    <md-card class="">
+      <md-card-header>
         <div md-card-avatar class="example-header-image"></div>
         <md-card-title>{{player.name}}</md-card-title>
         <md-card-subtitle>{{player.from}}</md-card-subtitle>
