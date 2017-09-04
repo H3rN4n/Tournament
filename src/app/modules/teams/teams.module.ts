@@ -25,6 +25,9 @@ import {
 } from './services/firebase.service';
 
 import { StoreModule, ActionReducerMap } from '@ngrx/store';
+
+import { SharedModule } from './../shared/shared.module';
+
 import {
   TeamReducer,
   TeamsReducers,
@@ -59,6 +62,7 @@ import { TeamsEffects, PlayersEffects } from './effects';
     MdProgressBarModule,
     FormsModule,
     RouterModule,
+    SharedModule,
     StoreModule.forFeature('Teams', TeamsReducers),
     StoreModule.forFeature('Team', TeamReducer),
     StoreModule.forFeature('Players', PlayersReducers),

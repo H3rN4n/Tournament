@@ -1,7 +1,7 @@
 // // teams.reducer.ts
 import { StoreModule, ActionReducerMap } from '@ngrx/store';
 import { TeamsActionTypes } from './actions/teams.actions';
-import { PlayersActionTypes } from './actions/players.actions';
+import { PlayersActionTypes } from './actions';
 import {
     teamsState,
     teamState,
@@ -54,6 +54,11 @@ export function playersReducer(state: any = playersState, action: any): any {
 }
 export function playerReducer(state: any = playersState, action: any): any {
     switch (action.type) {
+        case PlayersActionTypes.LOAD_SINGLE_SUCCESS: {
+            console.log('LOAD_SINGLE_SUCCESS')
+            return Object.assign({}, state, action.payload, { subscribed: true })
+            //return { ...state, single: action.payload, subscribed: true };
+        }
         default: {
             return state;
         }

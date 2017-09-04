@@ -14,11 +14,13 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs';
 import { _Player, _Team, _Match, _Teams, _Players } from './../../models';
 import { PlayersActions } from './../../actions/players.actions'
+import { fadeInAnimation } from './../../../../animations';
 
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  styleUrls: ['./players.component.css'],
+  animations: [fadeInAnimation]
 })
 export class PlayersComponent implements OnInit {
 

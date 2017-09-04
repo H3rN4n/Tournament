@@ -28,19 +28,19 @@ export const TeamsActionTypes = {
 /**
 * Add PLAYER to Collection Actions
 */
-// export class AddPLAYER implements Action {
+// class AddPLAYER implements Action {
 //     type = TeamsActionTypes.ADD_PLAYER;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class AddPLAYERSuccess implements Action {
+// class AddPLAYERSuccess implements Action {
 //     type = TeamsActionTypes.ADD_PLAYER_SUCCESS;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class AddPLAYERFail implements Action {
+// class AddPLAYERFail implements Action {
 //     type = TeamsActionTypes.ADD_PLAYER_FAIL;
 
 //     constructor(public payload: _Player) { }
@@ -50,19 +50,19 @@ export const TeamsActionTypes = {
 // /**
 //  * Remove PLAYER from Collection Actions
 //  */
-// export class RemovePLAYER implements Action {
+// class RemovePLAYER implements Action {
 //     type = TeamsActionTypes.REMOVE_PLAYER;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class RemovePLAYERSuccess implements Action {
+// class RemovePLAYERSuccess implements Action {
 //     type = TeamsActionTypes.REMOVE_PLAYER_SUCCESS;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class RemovePLAYERFail implements Action {
+// class RemovePLAYERFail implements Action {
 //     type = TeamsActionTypes.REMOVE_PLAYER_FAIL;
 
 //     constructor(public payload: _Player) { }
@@ -71,75 +71,75 @@ export const TeamsActionTypes = {
 /**
  * Load Collection Actions
  */
-export class Load implements Action {
+class Load implements Action {
     type = TeamsActionTypes.LOAD;
 
     constructor(public payload: any) { }
 }
 
-export class LoadSuccess implements Action {
+class LoadSuccess implements Action {
     type = TeamsActionTypes.LOAD_SUCCESS;
 
     constructor(public payload: _Team[]) { }
 }
 
-export class LoadFail implements Action {
+class LoadFail implements Action {
     type = TeamsActionTypes.LOAD_SINGLE_FAIL;
 
     constructor(public payload: any) { }
 }
 
 
-export class LoadSingle implements Action {
+class LoadSingle implements Action {
     type = TeamsActionTypes.LOAD_SINGLE;
 
     constructor(public payload: _Team) { }
 }
 
 
-export class LoadSingleSuccess implements Action {
+class LoadSingleSuccess implements Action {
     type = TeamsActionTypes.LOAD_SINGLE_SUCCESS;
 
     constructor(public payload: _Team) { }
 }
 
-export class LoadSingleFail implements Action {
+class LoadSingleFail implements Action {
     type = TeamsActionTypes.LOAD_SINGLE_FAIL;
 
     constructor(public payload: any) { }
 }
 
-// export class ChangeMaxPlayerPerTeam implements Action {
+// class ChangeMaxPlayerPerTeam implements Action {
 //     type = TeamsActionTypes.CHANGE_MAXPLAYER_PER_TEAM;
 
 //     constructor(public payload: any) { }
 // }
 
-// export class CreateTeam implements Action {
+// class CreateTeam implements Action {
 //     type = TeamsActionTypes.CREATE_TEAM;
 
 //     constructor() { }
 // }
 
-// export class CreateTeamSuccess implements Action {
+// class CreateTeamSuccess implements Action {
 //     type = TeamsActionTypes.LOAD_SUCCESS;
 
 //     constructor() { }
 // }
 
-// export class CreateTeamFail implements Action {
+// class CreateTeamFail implements Action {
 //     type = TeamsActionTypes.LOAD_FAIL;
 
 //     constructor() { }
 // }
 
-// export class DeleteAll implements Action {
+// class DeleteAll implements Action {
 //   type = TeamsActionTypes.DELETE_ALL_TEAMS;
 
 //   constructor() { }
 // }
 
-// export class DeleteAllSuccess implements Action {
+// class DeleteAllSuccess implements Action {
 //   type = TeamsActionTypes.DELETE_ALL_TEAMS_SUCCESS;
 
 //   constructor() { }

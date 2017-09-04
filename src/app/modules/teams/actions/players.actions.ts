@@ -14,6 +14,9 @@ export const PlayersActionTypes = {
     LOAD: type('[Players] Load'),
     LOAD_SUCCESS: type('[Players] Load Success'),
     LOAD_FAIL: type('[Players] Load Fail'),
+    LOAD_SINGLE: type('[Players] Load Single'),
+    LOAD_SINGLE_SUCCESS: type('[Players] Load Single Success'),
+    LOAD_SINGLE_FAIL: type('[Players] Load Single Fail'),
     // CHANGE_MAXPLAYER_PER_TEAM: type('[Teams] Change Max player per team'),
     // CREATE_TEAM: type('[Teams] Create Team'),
     // CREATE_TEAM_SUCCESS: type('[Teams] Create Team Success'),
@@ -25,19 +28,19 @@ export const PlayersActionTypes = {
 /**
 * Add PLAYER to Collection Actions
 */
-// export class AddPLAYER implements Action {
+// class AddPLAYER implements Action {
 //     type = TeamsActionTypes.ADD_PLAYER;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class AddPLAYERSuccess implements Action {
+// class AddPLAYERSuccess implements Action {
 //     type = TeamsActionTypes.ADD_PLAYER_SUCCESS;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class AddPLAYERFail implements Action {
+// class AddPLAYERFail implements Action {
 //     type = TeamsActionTypes.ADD_PLAYER_FAIL;
 
 //     constructor(public payload: _Player) { }
@@ -47,19 +50,19 @@ export const PlayersActionTypes = {
 // /**
 //  * Remove PLAYER from Collection Actions
 //  */
-// export class RemovePLAYER implements Action {
+// class RemovePLAYER implements Action {
 //     type = TeamsActionTypes.REMOVE_PLAYER;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class RemovePLAYERSuccess implements Action {
+// class RemovePLAYERSuccess implements Action {
 //     type = TeamsActionTypes.REMOVE_PLAYER_SUCCESS;
 
 //     constructor(public payload: _Player) { }
 // }
 
-// export class RemovePLAYERFail implements Action {
+// class RemovePLAYERFail implements Action {
 //     type = TeamsActionTypes.REMOVE_PLAYER_FAIL;
 
 //     constructor(public payload: _Player) { }
@@ -68,55 +71,74 @@ export const PlayersActionTypes = {
 /**
  * Load Collection Actions
  */
-export class Load implements Action {
+class Load implements Action {
     type = PlayersActionTypes.LOAD;
 
     constructor(public payload: any = null) { }
 }
 
-export class LoadSuccess implements Action {
+class LoadSuccess implements Action {
     type = PlayersActionTypes.LOAD_SUCCESS;
 
     constructor(public payload: _Team[]) { }
 }
 
-export class LoadFail implements Action {
+class LoadFail implements Action {
     type = PlayersActionTypes.LOAD_FAIL;
 
     constructor(public payload: any) { }
 }
 
-// export class ChangeMaxPlayerPerTeam implements Action {
+class LoadSingle implements Action {
+    type = PlayersActionTypes.LOAD_SINGLE;
+
+    constructor(public payload: _Team) { }
+}
+
+
+class LoadSingleSuccess implements Action {
+    type = PlayersActionTypes.LOAD_SINGLE_SUCCESS;
+
+    constructor(public payload: _Team) { }
+}
+
+class LoadSingleFail implements Action {
+    type = PlayersActionTypes.LOAD_SINGLE_FAIL;
+
+    constructor(public payload: any) { }
+}
+
+// class ChangeMaxPlayerPerTeam implements Action {
 //     type = TeamsActionTypes.CHANGE_MAXPLAYER_PER_TEAM;
 
 //     constructor(public payload: any) { }
 // }
 
-// export class CreateTeam implements Action {
+// class CreateTeam implements Action {
 //     type = TeamsActionTypes.CREATE_TEAM;
 
 //     constructor() { }
 // }
 
-// export class CreateTeamSuccess implements Action {
+// class CreateTeamSuccess implements Action {
 //     type = TeamsActionTypes.LOAD_SUCCESS;
 
 //     constructor() { }
 // }
 
-// export class CreateTeamFail implements Action {
+// class CreateTeamFail implements Action {
 //     type = TeamsActionTypes.LOAD_FAIL;
 
 //     constructor() { }
 // }
 
-// export class DeleteAll implements Action {
+// class DeleteAll implements Action {
 //   type = TeamsActionTypes.DELETE_ALL_TEAMS;
 
 //   constructor() { }
 // }
 
-// export class DeleteAllSuccess implements Action {
+// class DeleteAllSuccess implements Action {
 //   type = TeamsActionTypes.DELETE_ALL_TEAMS_SUCCESS;
 
 //   constructor() { }
@@ -137,6 +159,9 @@ export const PlayersActions = {
     Load,
     LoadSuccess,
     LoadFail,
+    LoadSingle,
+    LoadSingleSuccess,
+    LoadSingleFail
     // ChangeMaxPlayerPerTeam,
     // CreateTeam,
     // CreateTeamSuccess,
@@ -156,6 +181,9 @@ interface Actions {
     Load: typeof Load;
     LoadSuccess: typeof LoadSuccess;
     LoadFail: typeof LoadFail;
+    LoadSingle: typeof LoadSingle;
+    LoadSingleSuccess: typeof LoadSingleSuccess;
+    LoadSingleFail: typeof LoadSingleFail;
     // ChangeMaxPlayerPerTeam: typeof ChangeMaxPlayerPerTeam;
     // CreateTeam: typeof CreateTeam;
     // CreateTeamFail: typeof CreateTeamFail;

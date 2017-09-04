@@ -1,8 +1,18 @@
-<section>
-  Player Img
-  <h3>Team Name</h3>
-  <h5>Age:</h5>
-  <h5>Team:</h5>
-  <h5>Won:</h5>
-  <h5>Lose:</h5>
+<section @fadeInAnimation class="panel" *ngIf="playerData.name">
+  <img class="fadeIn" [src]="playerData.imageUrl" alt="">
+  <h3 class="fadeIn">{{playerData.name}}</h3>
+  <h5 class="fadeIn">Rating: {{playerData.rating}}</h5>
+  <h5 class="fadeIn">Nation: <img [src]="playerData.nationImageUrl" alt=""></h5>
+</section>
+
+<section class="panel" *ngIf="playerData.name">
+  <h3>Stats</h3>
+  <md-list @fadeInAnimation>
+    <md-list-item class="fadeIn">Def: {{playerData.stats.def}}</md-list-item>
+    <md-list-item class="fadeIn">Dri: {{playerData.stats.dri}}</md-list-item>
+    <md-list-item class="fadeIn">Pac: {{playerData.stats.pac}}</md-list-item>
+    <md-list-item class="fadeIn">Pas: {{playerData.stats.pas}}</md-list-item>
+    <md-list-item class="fadeIn">Phy: {{playerData.stats.phy}}</md-list-item>
+    <md-list-item class="fadeIn">Sho: {{playerData.stats.sho}}</md-list-item>
+  </md-list>
 </section>

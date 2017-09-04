@@ -17,7 +17,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
 import { AuthModule } from './modules/auth/auth.module';
-
+import { SharedModule } from './modules/shared/shared.module';
 import { debug, metaReducers } from './reducers';
 
 @NgModule({
@@ -37,11 +37,9 @@ import { debug, metaReducers } from './reducers';
     EffectsModule.forRoot([]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    SharedModule
   ],
-  // exports: [
-  //   FormsModule
-  // ],
   providers: [],
   bootstrap: [AppComponent]
 })

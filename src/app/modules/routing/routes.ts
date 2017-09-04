@@ -60,5 +60,6 @@ export const routes: Routes = [
     component: PlayerComponent
   },
   { path: 'backoffice', loadChildren: './../backoffice/backoffice.module#BackofficeModule'},
+  { path: 'pack', loadChildren: './../pack/pack.module#PackModule'},
   { path: '**', component: HomeComponent },
 ];

@@ -37,8 +37,8 @@ export class TeamsEffects {
     .ofType(TeamsActionTypes.LOAD)
     .mergeMap((action: any) => {
       return this.teamSrv.list({
-        limitToFirst: 10,
-        limitToLast: 50
+        limitToFirst: 0,
+        limitToLast: 5
       })
         .map(res => {
           this.openSnackBar("Teams Loaded");
@@ -112,7 +112,7 @@ export class PlayersEffects {
       if (action.payload.equalTo > 0) {
         return this.playerSrv.list({
           limitToFirst: 0,
-          limitToLast: 50,
+          limitToLast: 5,
           orderByChild: 'teamId',
           equalTo: parseInt(action.payload.equalTo)
         })
@@ -123,6 +123,20 @@ export class PlayersEffects {
           })
       }
     }
+    );
+
+    @Effect() getPlayer$: Observable<Action> = this.actions$
+    .ofType(PlayersActionTypes.LOAD_SINGLE)
+    .mergeMap((action: any) => {
+      return this.playerSrv.getItem(action.payload)
+        .map(res => {
+          this.openSnackBar("Player Loaded");
+          console.log('Player Loaded', res)
+          return new PlayersActions.LoadSingleSuccess(res);
+        })
+
+    }
+
     );
 
   constructor(

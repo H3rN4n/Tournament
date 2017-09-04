@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdToolbarModule, MdMenuModule, MdIconModule, MdButtonModule } from '@angular/material';
 
 import { RoutingModule } from './../routing/routing.module';
@@ -19,7 +18,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     RouterModule,
     MdMenuModule,
     MdIconModule,
-    BrowserAnimationsModule,
     MdToolbarModule,
     MdButtonModule,
     AuthModule,

@@ -13,7 +13,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs';
 import { _Player, _Team, _Match, _Teams, _Players } from './../../models';
-import { TeamsActions } from './../../actions/teams.actions';
+import { TeamsActions } from './../../actions';
 
 @Component({
   selector: 'app-team',
