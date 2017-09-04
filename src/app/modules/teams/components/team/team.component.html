@@ -22,8 +22,7 @@
     </div>
   </div>
 </section>
-<section class="panel" *ngIf="teamData.name">
-  <h4>Players</h4>
+<section *ngIf="teamData.name">
   <app-players [fromTeam]="id"></app-players>
 </section>
 <section class="panel" *ngIf="teamData.name">

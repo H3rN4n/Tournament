@@ -23,7 +23,7 @@ import { TeamsActions } from './../../actions';
 export class TeamComponent implements OnInit {
   id: any;
   team$: Observable<_Team>;
-  teamData: any;
+  teamData: any = {};
   subscriptions: Subscription[] = [];
   errors = [];
 

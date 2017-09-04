@@ -112,7 +112,7 @@ export class PlayersEffects {
       if (action.payload.equalTo > 0) {
         return this.playerSrv.list({
           limitToFirst: 0,
-          limitToLast: 5,
+          limitToLast: 12,
           orderByChild: 'teamId',
           equalTo: parseInt(action.payload.equalTo)
         })
