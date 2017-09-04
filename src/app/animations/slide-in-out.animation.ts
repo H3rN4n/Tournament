@@ -5,7 +5,7 @@ export const slideInAnimation =
         transition('* => *', [
             query('.slideIn', style({ opacity: 0, transform: 'translateX(100px)' }), { optional: true }),
             query('.slideIn', stagger('100ms', [
-                animate('800ms 1.2s ease-out', keyframes([
+                animate('200ms 400ms ease-out', keyframes([
                     style({ opacity: 1, transform: 'translateX(0px)' })
                 ]))
             ]), { optional: true })

@@ -17,12 +17,16 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
 }
 
+img {
+  width: 100%;
+}
+
 .example-fill-remaining-space {
     flex: 1 1 auto;
 }
 
 .panel {
-  padding: 30px;
+  padding: 10px;
   background: rgba(255,255,225,0.3);
   margin-top: 20px;
   box-shadow: rgba(255,255,225,0.3) 2px 3px;

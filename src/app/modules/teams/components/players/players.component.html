@@ -2,15 +2,28 @@
 <div class="panel" *ngIf="(players$ | async).list.length">
   <h3>Players</h3>
   <div class="row" @fadeInAnimation>
-    <div class="col-xs fadeIn" *ngFor="let player of (players$ | async).list" [routerLink]="['/player/' + player.$key]">
+    <div class="col-xs fadeIn" *ngFor="let player of (players$ | async).list">
       <md-card class="">
-        <md-card-header>
-          <div md-card-avatar class="example-header-image"></div>
-          <md-card-title>{{player.name}}</md-card-title>
-          <md-card-subtitle>{{player.from}}</md-card-subtitle>
-        </md-card-header>
-        <img [src]="player.imageUrl" [alt]="player.name">
+        <md-card-content @slideInAnimation>
+          <p class="playercard-name slideIn">{{player.name}}</p>
+          <div class="player-image-container">
+            <img class="slideIn" [src]="player.imageUrl" [alt]="player.name">
+          </div>
+          <md-list *ngIf="player.stats">
+            <md-list-item class="slideIn">Def: {{player.stats.def}}</md-list-item>
+            <md-list-item class="slideIn">Dri: {{player.stats.dri}}</md-list-item>
+            <md-list-item class="slideIn">Pac: {{player.stats.pac}}</md-list-item>
+            <md-list-item class="slideIn">Pas: {{player.stats.pas}}</md-list-item>
+            <md-list-item class="slideIn">Phy: {{player.stats.phy}}</md-list-item>
+            <md-list-item class="slideIn">Sho: {{player.stats.sho}}</md-list-item>
+          </md-list>
+        </md-card-content>
       </md-card>
+      <md-card-actions>
+        <button md-raised-button>Buy $0.99</button>
+        <button md-raised-button>+ Wish List</button>
+        <button md-raised-button [routerLink]="['/player/' + player.$key]" >See Detail</button>
+      </md-card-actions>
     </div>
   </div>
 </div>
