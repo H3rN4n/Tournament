@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, InjectionToken } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { LayoutModule } from './modules/layout/layout.module';
@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { AuthModule } from './modules/auth/auth.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { debug, metaReducers } from './reducers';
+
+
 
 @NgModule({
   declarations: [

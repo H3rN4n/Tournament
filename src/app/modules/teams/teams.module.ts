@@ -48,6 +48,7 @@ import { PlayerComponent } from './components/player/player.component';
 
 import { EffectsModule } from '@ngrx/effects';
 import { TeamsEffects, PlayersEffects } from './effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -63,6 +64,7 @@ import { TeamsEffects, PlayersEffects } from './effects';
     FormsModule,
     RouterModule,
     SharedModule,
+    BrowserAnimationsModule,
     StoreModule.forFeature('Teams', TeamsReducers),
     StoreModule.forFeature('Team', TeamReducer),
     StoreModule.forFeature('Players', PlayersReducers),
@@ -71,8 +73,7 @@ import { TeamsEffects, PlayersEffects } from './effects';
     StoreModule.forFeature('Tournament', TournamentReducers),
     StoreModule.forFeature('Matches', MatchesReducers),
     StoreModule.forFeature('Match', MatchReducers),
-    EffectsModule.forFeature([TeamsEffects]),
-    EffectsModule.forFeature([PlayersEffects])
+    EffectsModule.forFeature([TeamsEffects, PlayersEffects])
   ],
   exports: [ListComponent, ListItemComponent],
   providers: [

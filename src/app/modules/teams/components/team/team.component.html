@@ -10,14 +10,14 @@
 </section>
 <hr> -->
 <md-progress-bar *ngIf="!teamData.name" color="accent" mode="indeterminate"></md-progress-bar>
-<section class="panel header" *ngIf="teamData.name">
-  <div class="row">
+<section @slideInRightAnimation class="panel header fadeIn" *ngIf="teamData.name">
+  <div class="row" @fadeInAnimation >
     <div class="col-xs">
-      <h2>{{teamData.name}} | Stadium: (pic)</h2>
-      <p>Won: 123 | Lose: 123</p>
+      <h2 class="fadeIn">{{teamData.name}} | Stadium: (pic)</h2>
+      <p class="fadeIn">Won: 123 | Lose: 123</p>
     </div>
     <div class="col-sm-1">
-        <img [src]="teamData.imageUrl" alt="">
+        <img class="slideInRight" [src]="teamData.imageUrl" alt="">
       </div>
   </div>
 </section>

@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { slideInAnimation, fadeInAnimation } from './../../../../animations';
+import { AnimationsService } from 'angular-animation-lib';
+
+const fadeInAnimation = JSON.parse(AnimationsService.fadeIn());
+const slideInRightAnimation = JSON.parse(AnimationsService.slideInRight());
 
 @Component({
   moduleId: module.id.toString(),
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  animations: [slideInAnimation, fadeInAnimation]
+  animations: [
+    slideInRightAnimation,
+    fadeInAnimation
+  ]
 })
 export class HomeComponent implements OnInit {
-
-  animate: boolean = true;
-  constructor() { }
+  animate = true;
+  constructor() {}
 
   ngOnInit() {
   }

@@ -18,7 +18,7 @@ export const TeamReducer: ActionReducerMap<any> = teamReducer;
 export function teamsReducer(state: any = playersState, action: any): any {
     switch (action.type) {
         case TeamsActionTypes.LOAD_SUCCESS: {
-            console.log('LOAD_SUCCESS')
+            console.log('LOAD_SUCCESS');
             return { ...state, list: action.payload, subscribed: true };
         }
         default: {

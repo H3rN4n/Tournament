@@ -1,13 +1,26 @@
 import { trigger, state, animate, transition, style, keyframes, query, stagger } from '@angular/animations';
 
 export const slideInAnimation =
-    trigger('slideInAnimation', [
-        transition('* => *', [
-            query('.slideIn', style({ opacity: 0, transform: 'translateX(100px)' }), { optional: true }),
-            query('.slideIn', stagger('100ms', [
-                animate('200ms 400ms ease-out', keyframes([
-                    style({ opacity: 1, transform: 'translateX(0px)' })
-                ]))
-            ]), { optional: true })
-        ])
-    ]);
+  trigger('slideInAnimation', [
+    transition('* => *', [
+      query('.slideIn', style({ opacity: 0, transform: 'translateX(100px)' }), { optional: true }),
+      query('.slideIn', stagger('100ms', [
+        animate('200ms 400ms ease-out', keyframes([
+          style({ opacity: 1, transform: 'translateX(0px)' })
+        ]))
+      ]), { optional: true })
+    ])
+  ]);
+
+
+export const slideOutAnimation =
+  trigger('slideOutAnimation', [
+    transition('* => *', [
+      query('.slideOut', style({ opacity: 0, transform: 'translateX(0px)' }), { optional: true }),
+      query('.slideOut', stagger('100ms', [
+        animate('200ms 400ms ease-in', keyframes([
+          style({ opacity: 1, transform: 'translateX(100px)' })
+        ]))
+      ]), { optional: true })
+    ])
+  ]);

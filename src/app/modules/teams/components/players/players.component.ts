@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, Input } from '@a
 
 import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
 
-import { 
+import {
   TeamsService,
   PlayersService,
   TournamentsService,
@@ -11,9 +11,9 @@ import {
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 import { _Player, _Team, _Match, _Teams, _Players } from './../../models';
-import { PlayersActions } from './../../actions/players.actions'
+import { PlayersActions } from './../../actions/players.actions';
 import { fadeInAnimation, slideInAnimation } from './../../../../animations';
 
 @Component({
@@ -51,7 +51,7 @@ export class PlayersComponent implements OnInit {
 
   ) {
     this.players$ = store.select('Players');
-    //this.players$ = store.select('Players');
+    // this.players$ = store.select('Players');
   }
 
   ngOnInit() {
@@ -68,7 +68,7 @@ export class PlayersComponent implements OnInit {
     if(!this.playersData.length){
       this.store.dispatch(new PlayersActions.Load({equalTo: this.fromTeam}));
     }
-    
+
   }
 
   ngOnDetroy() {

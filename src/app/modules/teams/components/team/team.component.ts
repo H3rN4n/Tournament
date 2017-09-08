@@ -2,23 +2,47 @@ import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/
 
 import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
 
-import { 
+import * as stringify from 'json-stringify-safe';
+
+import {
   TeamsService,
   PlayersService,
   TournamentsService,
   MatchesService
 } from './../../services/firebase.service';
 
+import {
+  trigger,
+  style,
+  transition,
+  animate,
+  keyframes,
+  query,
+  stagger,
+  AnimationTriggerMetadata,
+  AnimationStyleMetadata
+} from '@angular/animations';
+
+import { AnimationsService } from 'angular-animation-lib';
+const fadeIn = JSON.parse(AnimationsService.fadeIn());
+const slideInRight = JSON.parse(AnimationsService.slideInRight());
+const slideOutRight = JSON.parse(AnimationsService.slideOutRight());
+
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 import { _Player, _Team, _Match, _Teams, _Players } from './../../models';
 import { TeamsActions } from './../../actions';
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
-  styleUrls: ['./team.component.css']
+  styleUrls: ['./team.component.css'],
+  animations: [
+    fadeIn,
+    slideInRight,
+    slideOutRight
+  ]
 })
 export class TeamComponent implements OnInit {
   id: any;
@@ -38,7 +62,7 @@ export class TeamComponent implements OnInit {
 
   ) {
     this.team$ = store.select('Team');
-    //this.players$ = store.select('Players');
+    // this.players$ = store.select('Players');
   }
 
   ngOnInit() {
@@ -53,10 +77,10 @@ export class TeamComponent implements OnInit {
 
     this.subscriptions.push(TeamSubcription);
 
-    if(!this.teamData.name){
+    if (!this.teamData.name) {
       this.store.dispatch(new TeamsActions.LoadSingle(this.id));
     }
-    
+
   }
 
   ngOnDetroy() {
